@@ -105,11 +105,9 @@ public class DemoApplication {
 
         @Bean(name = OUTBOUND_ID)
         IntegrationFlow producer() {
-
             log.info("starting producer flow..");
 
             return flowDefinition -> {
-
                 Kafka09ProducerMessageHandlerSpec kafka09ProducerMessageHandlerSpec = Kafka09.outboundChannelAdapter(producerFactory())
                         .topic(this.kafkaConfig.getTopic())
                         .messageKey(m -> m.getHeaders().get(IntegrationMessageHeaderAccessor.SEQUENCE_NUMBER));
@@ -142,7 +140,6 @@ public class DemoApplication {
 
         @Bean
         IntegrationFlow consumer() {
-
             log.info("starting consumer..");
 
             KafkaMessageDrivenChannelAdapterListenerContainerSpec<String, String> kafkaMDCAListenerContainerSpec =
