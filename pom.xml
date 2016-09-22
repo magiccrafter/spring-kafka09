@@ -23,7 +23,8 @@
         <dependency>
             <groupId>org.springframework.kafka</groupId>
             <artifactId>spring-kafka</artifactId>
-            <version>1.1.0.RELEASE</version>
+            <!--TODO: update to 1.1.0.RELEASE after spring-integration-dsl reaches 1.2.0.RELEASE -->
+            <version>1.0.3.RELEASE</version>
             <scope>compile</scope>
         </dependency>
         <dependency>

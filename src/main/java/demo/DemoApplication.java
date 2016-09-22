@@ -147,8 +147,8 @@ public class DemoApplication {
 
             return IntegrationFlows
                     .from(kafkaMDCAListenerContainerSpec)
-                    .<Map<String, List<String>>>handle((payload, headers) -> {
-                        payload.entrySet().forEach(e -> log.info(e.getKey() + '=' + e.getValue()));
+                    .handle((payload, headers) -> {
+                        log.info(payload);
                         return null;
                     })
                     .get();
